@@ -1,0 +1,53 @@
+<idea-plugin version="2">
+  <id>com.youmeek.plugin.chinesetypography</id>
+  <name>ChineseTypography</name>
+  <version>1.0</version>
+  <vendor email="admin@youmeek.com" url="http://www.YouMeek.com">YouMeek</vendor>
+
+  <description><![CDATA[
+      <hr>
+      <p>
+        <b>插件思路来源：</b><br>
+        我常用 IntelliJ IDEA 进行写作，开发此插件可以快速对文章内容的中文、英文、符号之间增加空格，增加文章可读性。
+      </p>
+      <hr>
+      <p>
+        </b>使用方法：</b><br>
+        方法一：选中内容，按快捷键：Ctrl + Shift + Y（Windows/Linux）、Command + Shift + Y（Mac）<br>
+        方法二：选中内容，点击工具栏：Code -- ChineseTypography
+      </p>
+      <hr>
+      <p>
+        </b>微信公众号：</b>iYouMeek<br>
+        <b>Github 项目地址：</b> <a href="https://github.com/judasn/ChineseTypography-IDEA-Plugin" target="_blank">https://github.com/judasn/ChineseTypography-IDEA-Plugin</a>
+      </p>
+      <hr>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      2016-12-31：第一个版本。（2017 年希望你过得比我好）
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="ChineseTypography.Transition" class="com.youmeek.typography.TransitionAction" text="ChineseTypography" description="对选中的内容进行中文、英文、符号之间增加空格">
+      <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl Y"/>
+    </action>
+  </actions>
+
+</idea-plugin>

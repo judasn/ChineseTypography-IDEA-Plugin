@@ -1,10 +1,20 @@
 <idea-plugin version="2">
   <id>com.youmeek.plugin.chinesetypography</id>
   <name>ChineseTypography</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="admin@youmeek.com" url="http://www.YouMeek.com">YouMeek</vendor>
 
   <description><![CDATA[
+      <hr>
+      <p>
+        <b>Introduce：</b><br>
+        Automatically insert whitespace between CJK (Chinese, Japanese, Korean), half-width English, digit and symbol characters.
+      </p>
+      <p>
+        <b>Usage：</b><br>
+        1.<b>Shortcut Key：</b>Ctrl + Shift + Y（Windows/Linux）、Command + Shift + Y（Mac）<br>
+        2.<b>Toolbar：</b>Code -- ChineseTypography
+      </p>
       <hr>
       <p>
         <b>插件思路来源：</b><br>

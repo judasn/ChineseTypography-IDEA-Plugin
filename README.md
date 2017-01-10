@@ -1,5 +1,16 @@
 # 介绍
 
+## Introduce：
+
+- Automatically insert whitespace between CJK (Chinese, Japanese, Korean), half-width English, digit and symbol characters.
+
+## Usage：
+
+- **1.Shortcut Key：** Ctrl + Shift + Y（Windows/Linux）、Command + Shift + Y（Mac）
+- **2.Toolbar：** Code -- ChineseTypography
+
+----------------------
+
 ## 插件思路来源
 
 - 我常用 IntelliJ IDEA 进行写作，开发此插件可以快速对文章内容的中文、英文、符号之间增加空格，增加文章可读性。

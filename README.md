@@ -23,7 +23,7 @@
 ## 插件下载（Download）
 
 - IntelliJ IDEA 官方链接：<https://plugins.jetbrains.com/idea/plugin/9374-chinesetypography>
-
+- Github：<https://github.com/judasn/ChineseTypography-IDEA-Plugin/releases>
 
 ## 作者信息
 

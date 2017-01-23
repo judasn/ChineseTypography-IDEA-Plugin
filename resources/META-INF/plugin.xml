@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.youmeek.plugin.chinesetypography</id>
   <name>ChineseTypography</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor email="admin@youmeek.com" url="http://www.YouMeek.com">YouMeek</vendor>
 
   <description><![CDATA[
@@ -35,7 +35,9 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      2016-12-31：第一个版本。（2017 年希望你过得比我好）
+      2016-12-31 == v1.0：第一个版本。（2017 年希望你过得比我好）<br>
+      2017-01-10 == v1.1：增加英文说明。<br>
+      2017-01-23 == v1.2：先去掉空格、换行、制表符、分页等，再进行分隔
     ]]>
   </change-notes>
 

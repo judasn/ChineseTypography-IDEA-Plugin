@@ -20,7 +20,7 @@
 
 - ![效果演示](github/chineseTypography.gif)
 
-## 插件下载
+## 插件下载（Download）
 
 - IntelliJ IDEA 官方链接：<https://plugins.jetbrains.com/idea/plugin/9374-chinesetypography>
 

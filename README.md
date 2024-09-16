@@ -6,8 +6,8 @@
 
 - **1.Shortcut Key：** Ctrl + Shift + Y（Windows/Linux）、Command + Shift + Y（Mac）
 - **2.Toolbar：** Code -- ChineseTypography
-- 
-- ![demo](github/chineseTypography.gif)
+
+- ![demo](https://raw.githubusercontent.com/judasn/ChineseTypography-IDEA-Plugin/master/github/chineseTypography.gif)
 
 <!-- Plugin description end -->
 

@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.uptmr.plugin.chinesetypography</id>
+    <name>ChineseTypography</name>
+    <version>1.2</version>
+    <vendor email="jn3.141592654@gmail.com" url="http://www.uptmr.com">UPTMR</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <category>Navigation</category>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="232.*"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ChineseTypography.Transition" class="com.uptmr.typography.TransitionAction" text="ChineseTypography" description="对选中的内容进行中文、英文、符号之间增加空格">
+            <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl Y"/>
+        </action>
+    </actions>
+
+</idea-plugin>

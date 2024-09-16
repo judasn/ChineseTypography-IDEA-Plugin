@@ -15,5 +15,6 @@
 
 ## 作者信息
 
+- 插件的开发教程：<https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/plugins-develop.md>
 - 作者wx：upupmoment
 

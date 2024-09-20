@@ -7,10 +7,7 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
 
-    <category>Navigation</category>
-
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="232.*"/>
+    <category>Editor</category>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->

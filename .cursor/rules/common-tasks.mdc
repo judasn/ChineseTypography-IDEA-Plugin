@@ -1,0 +1,115 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 常见开发任务
+
+## 环境设置
+
+### 初始化开发环境
+```bash
+# 克隆项目
+git clone https://github.com/judasn/ChineseTypography-IDEA-Plugin.git
+cd ChineseTypography-IDEA-Plugin
+
+# 构建项目
+./gradlew build
+```
+
+### IDE 配置
+- 使用 IntelliJ IDEA 2023.3+ 打开项目
+- 确保安装了 Kotlin 插件
+- 配置 JDK 17+
+
+## 开发工作流
+
+### 运行和调试
+```bash
+# 启动开发环境（会打开新的 IDEA 实例）
+./gradlew runIde
+
+# 运行 UI 测试
+./gradlew runIdeForUiTests
+```
+
+### 构建和打包
+```bash
+# 构建插件
+./gradlew build
+
+# 生成插件分发包
+./gradlew buildPlugin
+
+# 验证插件兼容性
+./gradlew verifyPlugin
+```
+
+## 代码修改常见场景
+
+### 添加新功能
+1. 在 `com.uptmr.typography` 包下创建新的 Action 类
+2. 在 @plugin.xml 中注册新 Action
+3. 配置快捷键和菜单位置
+4. 编写单元测试
+
+### 修改现有功能
+1. 编辑 @TransitionAction.kt
+2. 更新相关工具类（如需要）
+3. 运行测试确保功能正常
+
+### 添加工具类
+1. 在 `utils` 包下创建新的工具类
+2. 使用 `object` 声明单例类
+3. 添加必要的文档注释
+
+## 版本发布流程
+
+### 准备发布
+1. 更新 @gradle.properties 中的版本号
+2. 更新 @CHANGELOG.md
+3. 确保所有测试通过
+
+### 发布到 Marketplace
+```bash
+# 设置环境变量
+export PUBLISH_TOKEN="your_token"
+export CERTIFICATE_CHAIN="your_cert"
+export PRIVATE_KEY="your_key"
+export PRIVATE_KEY_PASSWORD="your_password"
+
+# 发布插件
+./gradlew publishPlugin
+```
+
+## 调试技巧
+
+### 日志输出
+```kotlin
+import com.intellij.openapi.diagnostic.Logger
+
+class TransitionAction : AnAction() {
+    private val logger = Logger.getInstance(TransitionAction::class.java)
+
+    override fun actionPerformed(e: AnActionEvent) {
+        logger.info("Action performed")
+        // ... 其他代码
+    }
+}
+```
+
+### 断点调试
+- 在 `runIde` 任务启动的 IDEA 实例中触发插件功能
+- 在开发环境的 IDEA 中设置断点进行调试
+
+## 常见问题解决
+
+### 构建失败
+- 检查 JDK 版本是否为 17+
+- 清理构建缓存：`./gradlew clean`
+- 重新下载依赖：`./gradlew --refresh-dependencies`
+
+### 插件无法加载
+- 检查 @plugin.xml 配置
+- 确认依赖声明正确
+- 查看 IDEA 日志文件

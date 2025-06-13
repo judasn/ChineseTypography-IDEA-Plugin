@@ -1,0 +1,72 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 开发指南
+
+## 代码规范
+
+### Kotlin 编码标准
+- 使用 4 空格缩进
+- 类名使用 PascalCase
+- 函数和变量名使用 camelCase
+- 常量使用 UPPER_SNAKE_CASE
+- 包名使用小写字母和点分隔
+
+### IntelliJ Platform 开发规范
+- Action 类继承 `AnAction` 并重写 `actionPerformed` 方法
+- 使用 `WriteCommandAction.runWriteCommandAction` 进行文档修改
+- 通过 `PlatformDataKeys` 获取编辑器和项目实例
+- 使用 `SelectionModel` 处理文本选择
+
+## 项目结构约定
+
+### 包组织
+```
+com.uptmr.typography/
+├── TransitionAction.kt    # 主要功能类
+└── utils/                 # 工具类包
+    └── *.kt              # 各种工具类
+```
+
+### 文件命名
+- Action 类以 "Action" 结尾
+- 工具类以 "Utils" 结尾
+- 测试类以 "Test" 结尾
+
+## 开发最佳实践
+
+### 错误处理
+- 使用 null 安全操作符 `?:`
+- 对可能为 null 的对象进行检查
+- 示例：`val editor = e.getData(PlatformDataKeys.EDITOR) ?: return`
+
+### 文档修改
+- 始终使用 `WriteCommandAction` 包装文档修改操作
+- 确保操作的原子性和可撤销性
+
+### 依赖管理
+- 核心功能依赖 Pangu 库进行中文排版处理
+- 使用 Apache Commons Lang3 进行字符串操作
+- 工具类使用 object 声明确保单例模式
+
+## 测试策略
+- 为核心功能编写单元测试
+- 使用 IntelliJ Platform 测试框架
+- 测试文件位于 `src/test/` 目录
+
+## 插件配置
+- 在 @plugin.xml 中配置 Action
+- 设置合适的快捷键和菜单位置
+- 声明必要的平台依赖
+
+## 版本控制
+- 遵循语义化版本规范
+- 在 @CHANGELOG.md 中记录版本变更
+- 更新 @gradle.properties 中的版本号
+
+## 性能考虑
+- 避免在 UI 线程中进行耗时操作
+- 对大文本进行分块处理
+- 使用正则表达式预处理优化性能

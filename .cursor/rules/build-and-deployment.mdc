@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 构建与部署指南
+
+## 构建配置
+
+### Gradle 配置
+- **[build.gradle.kts](mdc:build.gradle.kts)** - 主要构建脚本
+  - 使用 Kotlin DSL
+  - 配置 IntelliJ Platform Gradle Plugin
+  - 管理依赖和插件配置
+
+### 项目属性
+- **[gradle.properties](mdc:gradle.properties)** - 项目配置属性
+  - 插件版本：2.0.2
+  - 支持的 IDEA 版本：233-243.*
+  - 平台类型：IntelliJ IDEA Community (IC)
+  - 基础版本：2023.3.7
+
+## 关键依赖
+```kotlin
+// 核心功能依赖
+implementation("ws.vinta:pangu:1.1.0")           // 中文排版核心库
+implementation("org.apache.commons:commons-lang3:3.17.0")  // 字符串处理
+implementation(libs.guava)                        // Google 核心库
+
+// 开发工具
+compileOnly(libs.lombok)                         // 代码生成
+annotationProcessor(libs.lombok)
+```
+
+## 构建任务
+- `./gradlew build` - 构建插件
+- `./gradlew runIde` - 运行开发环境
+- `./gradlew buildPlugin` - 构建插件分发包
+- `./gradlew publishPlugin` - 发布到 JetBrains Marketplace
+
+## 版本管理
+- 使用语义化版本 (SemVer)
+- 版本信息在 [gradle.properties](mdc:gradle.properties) 中配置
+- 支持预发布标签（如 2.1.7-alpha.3）
+
+## 插件验证
+- 自动验证插件兼容性
+- 支持推荐的 IDE 版本测试
+- 集成 Qodana 代码质量检查
+
+## 发布配置
+- 证书链：`CERTIFICATE_CHAIN` 环境变量
+- 私钥：`PRIVATE_KEY` 环境变量
+- 私钥密码：`PRIVATE_KEY_PASSWORD` 环境变量
+- 发布令牌：`PUBLISH_TOKEN` 环境变量
+
+## 测试配置
+- 支持 UI 测试
+- Robot Server 插件集成
+- 自定义测试运行配置

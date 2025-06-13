@@ -1,0 +1,45 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 代码结构指南
+
+## 核心类结构
+
+### 主要 Action 类
+- **@TransitionAction.kt** - 插件的主要功能入口
+  - 继承自 `AnAction`，实现 IntelliJ 平台的 Action 机制
+  - 处理用户选中的文本，应用中文排版规则
+  - 使用 `WriteCommandAction` 确保文本修改的事务性
+
+### 工具类
+- **@RegexExpressionUtils.kt** - 正则表达式工具类
+  - 提供字符串替换功能
+  - 用于预处理文本（移除制表符、换行符等）
+
+## 包结构
+```
+com.uptmr.typography/
+├── TransitionAction.kt          # 主要 Action 实现
+└── utils/
+    └── RegexExpressionUtils.kt  # 正则表达式工具
+```
+
+## 核心处理流程
+1. 用户选择文本并触发 Action
+2. `RegexExpressionUtils.replace()` 预处理文本（移除不需要的空白字符）
+3. `Pangu().spacingText()` 应用中文排版规则
+4. `WriteCommandAction` 将处理后的文本写回编辑器
+
+## 配置文件
+- **@plugin.xml** - 插件元数据配置
+  - 定义插件 ID、名称、版本
+  - 配置 Action 的快捷键和菜单位置
+  - 声明插件依赖
+
+## 编码规范
+- 使用 Kotlin 语言
+- 遵循 IntelliJ Platform SDK 开发规范
+- 使用 object 声明单例工具类
+- 函数命名采用驼峰命名法

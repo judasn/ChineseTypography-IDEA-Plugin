@@ -1,0 +1,34 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 中文排版 IDEA 插件项目概览
+
+## 项目简介
+这是一个 IntelliJ IDEA 插件，用于自动在中日韩文字（CJK）、半角英文、数字和符号字符之间插入空格，改善中文排版效果。
+
+## 核心功能
+- 自动在 CJK 字符与英文、数字、符号之间添加空格
+- 支持快捷键操作：Ctrl + Shift + Y（Windows/Linux）、Command + Shift + Y（Mac）
+- 通过工具栏菜单访问：Code -- ChineseTypography
+
+## 项目结构
+- **主要源码**：@src/main/kotlin/com/uptmr/typography/
+- **构建配置**：@build.gradle.kts
+- **插件配置**：@src/main/resources/META-INF/plugin.xml
+- **项目属性**：@gradle.properties
+
+## 技术栈
+- **语言**：Kotlin
+- **构建工具**：Gradle with Kotlin DSL
+- **框架**：IntelliJ Platform SDK
+- **核心依赖**：
+  - Pangu.java (ws.vinta:pangu:1.1.0) - 中文排版核心库
+  - Apache Commons Lang3 - 字符串处理工具
+  - Guava - Google 核心库
+
+## 开发环境要求
+- JVM 17+
+- IntelliJ IDEA 2023.3+
+- Gradle 8.9+
